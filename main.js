@@ -6,7 +6,7 @@ const http = require("http");
 const fs = require("fs");
 
 const PORT = 47821;
-const ROOT_DIR = __dirname; // index.html, css/, js/ all live right here
+const ROOT_DIR = path.join(__dirname, "www"); // index.html, css/, js/ all live right here
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -57,7 +57,7 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: "#f6f4ef",
 
-    icon: path.join(ROOT_DIR, "assets", "iconNoBG.png"),
+    icon: path.join(__dirname, "www", "assets", "iconNoBG.png"),
 
     webPreferences: {
       contextIsolation: true,
